@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SwiftCart</title>
 
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="./style/style.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -26,7 +26,7 @@
 
 <body>
   <header class="">
-    <div class="navbar bg-base-100 shadow-sm lg:px-36">
+    <div class="navbar fixed bg-base-100 shadow-sm lg:px-36 z-10">
       <div class="navbar-start">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -49,23 +49,21 @@
         <a class="text-xl text-[#7F6FF9] font-bold">SwiftCart</a>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1 font-semibold text-gray-500">
-          <li><a>Home</a></li>
-          <li>
-            <a href="products.html">Products</a>
+      <ul class="menu menu-horizontal px-2 font-semibold gap-2">
+    <li><a href="index.html" class="nav-link hover:text-blue-500">Home</a></li>
+    <li><a href="products.html" class="nav-link hover:text-blue-500">Products</a></li>
+    <li><a href="#" class="nav-link hover:text-blue-500">About</a></li>
+    <li><a href="#" class="nav-link hover:text-blue-500">Contact</a></li>
+</ul>
 
-          </li>
-          <li><a>About</a></li>
-          <li><a>Contact</a></li>
-        </ul>
       </div>
       <div class="navbar-end">
-        <a class="text-xl"><i class="fa-solid fa-cart-plus"></i></a>
+        <a class="btn text-xl " > <span id="cart-icon" class="font-normal"></span><i class="fa-solid fa-cart-plus"></i></a>
       </div>
     </div>
   </header>
 
-  <section id="hero" class="">
+  <section id="hero" class="pt-16">
     <div class="hero-bg hero h-[480px]">
       <div class="hero-overlay"></div>
       <div class="text-neutral-content text-left">
@@ -196,22 +194,23 @@
     <p>The latest news, articles, and resources <br> sent to your inbox weekly.</p>
     <fieldset class="w-80">
     
-      <div class="join">
+      <div class="join flex flex-col gap-2 sm:gap-0 sm:flex-row">
         <input
           type="text"
           placeholder="Enter your email address"
-          class="input input-bordered join-item" />
+          class="input input-bordered join-item text-black" />
         <button class="btn btn-primary join-item">Subscribe</button>
       </div>
     </fieldset>
   </form>
     </footer>
+    <hr class="text-white px-24">
     <footer class="footer w-full sm:footer-horizontal bg-[#1E2939] text-neutral-content items-center p-4">
   <aside class="grid-flow-col items-center">
   
     <p class="font-light">© 2026 SwiftCard, Inc. All rights reserved.</p>
   </aside>
-  <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+  <nav class="grid-flow-col  gap-4 md:place-self-center md:justify-self-end">
     <a>
       <svg
         xmlns="http://www.w3.org/2000/svg"

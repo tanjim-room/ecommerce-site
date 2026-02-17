@@ -1,3 +1,29 @@
+let cart = 0;
+
+const addToCart = () => {
+  const cartItem = document.getElementById("cart-icon");
+  cartItem.innerHTML = ""
+  cart++
+  cartItem.innerHTML = `
+  <b>${cart}</b>`
+  cartIcon.append(cartItem);
+}
+
+const navLinks = document.querySelectorAll('.nav-link');
+const currentPage = window.location.pathname.split('/').pop();
+
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute('href');
+  if (linkPage === currentPage) {
+    link.classList.add('text-blue-700');
+  } else {
+    link.classList.remove('text-blue-700');
+  }
+});
+
+
+
+
 const loadAllProducts = async () => {
     const url = "https://fakestoreapi.com/products"
     const res = await fetch(url);
@@ -8,6 +34,9 @@ const loadAllProducts = async () => {
     displayCategoryActive("all-btn");
 
 }
+
+
+
 
 const loadAllTrending = async () => {
     const url = "https://fakestoreapi.com/products"
@@ -108,7 +137,7 @@ const displayTrendingProduct = (products) => {
         <i class="fa-regular fa-eye"></i> Details
       </button>
 
-      <button class="btn btn-primary w-1/2">
+      <button onclick="addToCart()" class="btn btn-primary w-1/2">
         <i class="fa-solid fa-cart-plus"></i> Add
       </button>
     </div>
@@ -174,7 +203,7 @@ const displayModal = async (productId) => {
         <i class="fa-regular fa-eye"></i> Buy Now
       </button>
 
-      <button class="btn btn-primary w-1/2">
+      <button onclick="addToCart()" class="btn btn-primary w-1/2">
         <i class="fa-solid fa-cart-plus"></i> Add to Cart
       </button>
     </div>
@@ -230,7 +259,7 @@ const displayCategoryProduct = (products) => {
         <i class="fa-regular fa-eye"></i> Details
       </button>
 
-      <button class="btn btn-primary w-1/2">
+      <button onclick="addToCart()"  class="btn btn-primary w-1/2">
         <i class="fa-solid fa-cart-plus"></i> Add
       </button>
     </div>
@@ -294,7 +323,7 @@ const displayAllProduct = (products) => {
         <i class="fa-regular fa-eye"></i> Details
       </button>
 
-      <button class="btn btn-primary w-1/2">
+      <button onclick="addToCart()" class="btn btn-primary w-1/2">
         <i class="fa-solid fa-cart-plus"></i> Add
       </button>
     </div>
